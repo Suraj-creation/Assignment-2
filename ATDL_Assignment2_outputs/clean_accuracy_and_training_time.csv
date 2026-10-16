@@ -1,0 +1,4 @@
+model,training_minutes,clean_accuracy_pct
+Baseline B,12.98660237811661,92.35
+Teacher M1,13.042776208049812,90.8
+Student M2,16.269680596349886,91.65

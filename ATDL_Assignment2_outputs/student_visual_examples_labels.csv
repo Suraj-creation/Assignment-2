@@ -1,0 +1,6 @@
+example,true_label,original_prediction,fgsm_prediction,pgd_prediction
+1,horse,horse,horse,bird
+2,cat,cat,cat,dog
+3,airplane,airplane,airplane,airplane
+4,bird,bird,deer,deer
+5,airplane,airplane,airplane,airplane

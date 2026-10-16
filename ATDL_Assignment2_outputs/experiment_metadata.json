@@ -1,0 +1,42 @@
+{
+  "experiment_config": {
+    "seed": 42,
+    "epochs_per_model": 30,
+    "batch_size": 128,
+    "eval_batch_size": 128,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0005,
+    "temperature": 20.0,
+    "epsilons": [
+      0.0,
+      0.00784313725490196,
+      0.01568627450980392,
+      0.03137254901960784,
+      0.06274509803921569
+    ],
+    "pgd_steps": 20,
+    "pgd_alpha": 0.00784313725490196,
+    "eval_samples": 2000,
+    "train_transform": "RandomCrop(32, padding=4), RandomHorizontalFlip(), ToTensor()",
+    "model": "CIFAR-adapted ResNet34, trained from scratch",
+    "input_contract": "Raw pixel tensors in [0,1]; normalization inside model wrapper"
+  },
+  "device": "cuda",
+  "gpu_name": "NVIDIA RTX 4000 Ada Generation",
+  "torch_version": "2.11.0+cu130",
+  "torchvision_version": "0.26.0+cu130",
+  "evaluation_subset_size": 2000,
+  "clean_accuracy_pct": {
+    "Baseline B": 92.35,
+    "Teacher M1": 90.8,
+    "Student M2": 91.65
+  },
+  "training_seconds": {
+    "Baseline B": 779.1961426869966,
+    "Teacher M1": 782.5665724829887,
+    "Student M2": 976.1808357809932
+  },
+  "teacher_loss_note": "Teacher trains with T * CE(logits/T, hard labels); explicit documented gradient-scale compensation because the assignment table specifies T=20 but does not give a teacher loss equation.",
+  "student_loss": "-T^2 * mean_i sum_k softmax(teacher_logits/T)_k * log_softmax(student_logits/T)_k",
+  "attack_loss": "True-label cross entropy on model logits at T=1; perturbations are applied in raw [0,1] pixel space."
+}

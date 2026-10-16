@@ -1,7 +1,7 @@
 {
   "experiment_config": {
     "seed": 42,
-    "epochs_per_model": 30,
+    "epochs_per_model": 50,
     "batch_size": 128,
     "eval_batch_size": 128,
     "learning_rate": 0.001,
@@ -27,14 +27,14 @@
   "torchvision_version": "0.26.0+cu130",
   "evaluation_subset_size": 2000,
   "clean_accuracy_pct": {
-    "Baseline B": 92.35,
-    "Teacher M1": 90.8,
-    "Student M2": 91.65
+    "Baseline B": 92.65,
+    "Teacher M1": 92.55,
+    "Student M2": 92.45
   },
   "training_seconds": {
-    "Baseline B": 779.1961426869966,
-    "Teacher M1": 782.5665724829887,
-    "Student M2": 976.1808357809932
+    "Baseline B": 1302.897874192,
+    "Teacher M1": 1305.6093183649937,
+    "Student M2": 1626.3608061580017
   },
   "teacher_loss_note": "Teacher trains with T * CE(logits/T, hard labels); explicit documented gradient-scale compensation because the assignment table specifies T=20 but does not give a teacher loss equation.",
   "student_loss": "-T^2 * mean_i sum_k softmax(teacher_logits/T)_k * log_softmax(student_logits/T)_k",

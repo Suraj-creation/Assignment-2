@@ -1,6 +1,6 @@
 {
   "seed": 42,
-  "epochs_per_model": 30,
+  "epochs_per_model": 50,
   "batch_size": 128,
   "eval_batch_size": 128,
   "learning_rate": 0.001,

@@ -1,4 +1,4 @@
 model,FGSM,PGD
-Baseline B,9.55,0.0
-Student M2,75.0,70.0
-Teacher M1,80.25,74.6
+Baseline B,9.3,0.0
+Student M2,84.5,79.9
+Teacher M1,85.3,82.1

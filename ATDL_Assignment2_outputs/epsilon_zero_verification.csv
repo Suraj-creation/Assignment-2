@@ -1,7 +1,7 @@
 model,attack,clean_accuracy_pct,epsilon_zero_accuracy_pct,matches
-Baseline B,FGSM,92.35,92.35,True
-Baseline B,PGD,92.35,92.35,True
-Teacher M1,FGSM,90.8,90.8,True
-Teacher M1,PGD,90.8,90.8,True
-Student M2,FGSM,91.65,91.65,True
-Student M2,PGD,91.65,91.65,True
+Baseline B,FGSM,92.65,92.65,True
+Baseline B,PGD,92.65,92.65,True
+Teacher M1,FGSM,92.55,92.55,True
+Teacher M1,PGD,92.55,92.55,True
+Student M2,FGSM,92.45,92.45,True
+Student M2,PGD,92.45,92.45,True
